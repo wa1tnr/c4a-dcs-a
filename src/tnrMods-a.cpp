@@ -2,7 +2,7 @@
 /* new file 18 December 2024 */
 
 #include <Arduino.h>
-// #include "tnrMods-a.h"
+#include "tnrMods-a.h"
 
 /*
  * 
@@ -20,13 +20,7 @@ static inline int rom_reboot(uint32_t flags, uint32_t delay_ms, uint32_t p0, uin
 
 */
 
-// #include "pico/bootrom.h"
-// #include "pico/bootrom_constants.h" // order of these two - and - compiles without TODO
-
-void reflash_firmware_tnr(void) {
-
-   /* BUG - REBOOT_TYPE_NORMAL only in comments not pico-sdk proper code */
-
+void reboot_rp2350_tnr(void) {
    rom_reboot(BOOT_TYPE_NORMAL, 500, 0, 0);
 
    if (0) {
@@ -37,14 +31,22 @@ void reflash_firmware_tnr(void) {
    }
 }
 
+void reflash_firmware_tnr(void) {
+    reset_usb_boot(0, 0);
+}
+
 void gojiraBoot() {
     Serial.println(
         " gojiraBoot() called here.. "
     );
-    delay(5000);
+    delay(2500);
     Serial.println(
-        " .. would be rebooting here w reflash testing.."
+        " .. rebooting here.."
     );
+    reboot_rp2350_tnr();
+}
+
+void gojiraReflash() {
     reflash_firmware_tnr();
 }
 

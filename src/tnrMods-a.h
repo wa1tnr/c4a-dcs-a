@@ -1,9 +1,8 @@
 /* tnrMods-a.h */
 /* new file 18 December 2024 */
 
+#include "pico/bootrom_constants.h" // order of these two - and - compiles without TODO
 #include "pico/bootrom.h"
-
-// #include "pico/bootrom_constants.h" // order of these two - and - compiles without TODO
 
 /*
  * 
@@ -24,5 +23,6 @@ static inline int rom_reboot(uint32_t flags, uint32_t delay_ms, uint32_t p0, uin
 /* may not be needed for c++ */
 // extern void reflash_firmware_tnr(void);
 extern void gojiraBoot();
+extern void gojiraReflash();
 
 /* end */
