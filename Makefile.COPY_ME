@@ -14,6 +14,9 @@ uploadfs:
 comm:
 	cf-fastpico9t /dev/ttyACM0 
 
+update_ger:
+	pio pkg update -g -p https://github.com/maxgerhardt/platform-raspberrypi.git
+
 CFLAGS = -O3 -m32
 srcfiles := $(shell find . -name "*.cpp")
 incfiles := $(shell find . -name "*.h")
