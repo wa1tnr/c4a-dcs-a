@@ -1,0 +1,42 @@
+
+
+builder:
+	pio run
+
+# firmware upload is just upload
+upload:
+	pio run -t upload
+
+# littlefs upload is uploadfs
+uploadfs:
+	pio run -t uploadfs
+
+comm:
+	cf-fastpico9t /dev/ttyACM0 
+
+CFLAGS = -O3 -m32
+srcfiles := $(shell find . -name "*.cpp")
+incfiles := $(shell find . -name "*.h")
+
+c4a: $(srcfiles) $(incfiles)
+	$(CC) $(CFLAGS) $(srcfiles) -DIS_LINUX=1 -o $@
+
+run: c4a
+	./c4a
+
+clean:
+	rm -rf ./.pio
+
+cleanold:
+	rm -f c4a
+
+test: c4a
+	./c4a block-200.fth
+
+bin: c4a
+	cp -u -p c4a ~/bin/
+
+git_status:
+	@git status | cat | tr -d '\t'
+
+# end.
