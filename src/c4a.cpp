@@ -166,7 +166,32 @@ int  strLen(const char *s) { int l = 0; while (s[l]) { l++; } return l; }
 void comma(cell x) { code[here++] = (wc_t)x; }
 void commaCell(cell n) { store32((cell)&code[here], n); here += (CELL_SZ / WC_SZ); }
 int  changeState(int x) { state = x; return x; }
-void ok() { if (state==0) { state=INTERP; } zType((state==INTERP) ? " ok\r\n" : "... "); }
+
+// void ok() { if (state==0) { state=INTERP; } zType((state==INTERP) ? " ok\r\n" : "... "); }
+
+// #define BEST_WESTERN -1
+#define BEST_WESTERN 0
+
+void ok() {
+    if (state == 0) {
+        state = INTERP;
+    }
+#if BEST_WESTERN
+    Serial.print(  " DEBUG state: ");
+    Serial.println(state, HEX);
+    Serial.println("    best western");
+#endif
+    int peekState = state;
+    if (peekState == 4) {
+        Serial.println("  okay state '4' is seen here.\n\n");
+        Serial.println(
+            "\n\nproblem during a load is likely here.. rebooting now: ");
+        delay(5000);
+        gojiraBoot();
+    }
+    zType((state == INTERP) ? " ok\r\n" : "... ");
+}
+
 wc_t getWCat(cell addr) { return code[addr]; }
 void setWCat(cell addr, wc_t val) { code[addr] = val; }
 
