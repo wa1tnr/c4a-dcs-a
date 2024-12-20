@@ -3,6 +3,7 @@
 
 #include <Arduino.h>
 #include "tnrMods-a.h"
+#define mySerial Serial // Teensy and Pico
 
 /*
  * 
@@ -36,11 +37,11 @@ void reflash_firmware_tnr(void) {
 }
 
 void gojiraBoot() {
-    Serial.println(
+    mySerial.println(
         " gojiraBoot() called here.. "
     );
     delay(2500);
-    Serial.println(
+    mySerial.println(
         " .. rebooting here.."
     );
     reboot_rp2350_tnr();
