@@ -80,21 +80,30 @@ void sys_load() {
     outer(": (.) <# #s #> ztype ;");
     outer(": . (.) 32 emit ;");
 
+/*
     outer(": bl 32 ; : space 32 emit ;");
+*/
+    outer(": space 32 emit ;");
     outer(": cr 13 emit 10 emit ;");
     outer(": tab 9 emit ;");
     outer(": .version version <# # # #. # # #. #s #> ztype ;");
+/*
     outer(": ?  @ . ;");
+*/
 
     outer(": .s '(' emit space (dsp) wc@ 1- ?dup");
     outer("    if for i 1+ cells dstk + @ . next then ')' emit ;");
 
+/*
     outer(": [[ vhere >t here >t 1 state wc! ;");
     outer(": ]] (exit) , 0 state wc! t@ (here) wc! t> >r t> (vhere) ! ; immediate");
+*/
 
     outer("mem-sz 1- ->memory const dict-end");
+/*
     outer(": ->xt     @ ;");
     outer(": ->flags  wc-sz + c@ ;");
+*/
     outer(": ->len    wc-sz + 1+ c@ ;");
     outer(": ->name   wc-sz + 2+ ;");
 
@@ -105,14 +114,18 @@ void sys_load() {
     outer("      t@+ 9 > if cr 0 t! else tab then");
     outer("      a@ de-sz + a! a@ dict-end <");
     outer("    while tdrop adrop r> .\"  (%d words)\" ;");
+/*
     outer(": words-n ( n-- )  0 >a last ->memory swap for");
     outer("          dup ->name ztype tab a@+ 9 > if cr 0 a! then de-sz +");
     outer("      next drop adrop ;");
+*/
 
     outer("cell var vh");
     outer(": marker here 20 wc! last 21 wc! vhere vh ! ;");
     outer(": forget 20 wc@ (here) wc! 21 wc@ (last) wc! vh @ (vhere) ! ;");
+/*
     outer(": fgl last dup de-sz + (last) wc! ->memory @ (here) wc! ;");
+*/
 
 #ifndef FILE_NONE
     outer(": fopen-rt ( fn--fh )  z\" rt\" fopen ;");
