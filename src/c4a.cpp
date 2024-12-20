@@ -172,19 +172,21 @@ int  changeState(int x) { state = x; return x; }
 // #define BEST_WESTERN -1
 #define BEST_WESTERN 0
 
+#define mySerial Serial // Teensy and Pico
+
 void ok() {
     if (state == 0) {
         state = INTERP;
     }
 #if BEST_WESTERN
-    Serial.print(  " DEBUG state: ");
-    Serial.println(state, HEX);
-    Serial.println("    best western");
+    mySerial.print(  " DEBUG state: ");
+    mySerial.println(state, HEX);
+    mySerial.println("    best western");
 #endif
     int peekState = state;
     if (peekState == 4) {
-        Serial.println("  okay state '4' is seen here.\n\n");
-        Serial.println(
+        mySerial.println("  okay state '4' is seen here.\n\n");
+        mySerial.println(
             "\n\nproblem during a load is likely here.. rebooting now: ");
         delay(5000);
         gojiraBoot();
@@ -271,7 +273,7 @@ DE_T *findWord(const char *w) {
 }
 
 int findXT(int xt) {
-        Serial.println(" DEBUG: Line 247: c4a.cpp: cast of dp->xt to (int) NON_STANDARD");
+        mySerial.println(" DEBUG: Line 247: c4a.cpp: cast of dp->xt to (int) NON_STANDARD");
 	int cw = last;
 	while (cw < MEM_SZ) {
 		DE_T *dp = (DE_T*)&memory[cw];
