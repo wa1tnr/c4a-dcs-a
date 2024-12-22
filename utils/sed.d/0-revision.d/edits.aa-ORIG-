@@ -1,69 +1,3 @@
-Script started on 2024-12-22 18:30:46+00:00 [TERM="foot" TTY="/dev/pts/23" COLUMNS="126" LINES="28"]
-[?2004hanon@host: $   export PS1=" script 4 "[K[K[K$ "
-[?2004l[?2004h script $   [7m  pgrep script[27m[C[C[C[C[C[C[C[C[C[C[C[C  pgrep script
-[?2004l161164
-[?2004h script $  date
-[?2004lSun 22 Dec 18:30:57 UTC 2024
-[?2004h script $  cf-fastpico9t/[K /dev/ttyACM0 
-[?2004lNON-STANDARD escape char is the backslash, not the usual Control+A
-Control \, Control Q to quit
-Control \, Control S to send a file from the local directory
-Good for 9term August 2020
-picocom v3.1
-
-port is        : /dev/ttyACM0
-flowcontrol    : none
-baudrate is    : 115200
-parity is      : none
-databits are   : 8
-stopbits are   : 1
-escape is      : C-|
-local echo is  : no
-noinit is      : no
-noreset is     : no
-hangup is      : no
-nolock is      : no
-send_cmd is    : ascii-xfr -sn -l 5 -c 1
-receive_cmd is : rz -vv -E
-imap is        : 
-omap is        : crlf,delbs,
-emap is        : crcrlf,delbs,
-logfile is     : none
-initstring     : none
-exit_after is  : not set
-exit is        : no
-
-Type [C-|] [C-h] to see available commands
-Terminal ready
-
-
-    c4a local tnr version: Dec 20 2024 18:42:42
-   tannis feldspar delta    __
-Fri 20 Dec 14:51:27 UTC 2024
-  glowworm mealworm        __
-  difta  clage  agtbeta    __
-  ptanq  steya  balduna    __
-  gojira! gojiraflash      __
-
-LittleFS: begin ... done.
-LittleFS: initialized
-
-Bytes total: 1048576, used: 122880
-c4 - version 2024.12.04
-Hello. ok  a4de913
-1 load -fopen:fh=1,md=r--fopen:fh=1,md=r--fopen:fh=1,md=r-
-I am block #009 loaded rp2350 tnr.
-
-cblinks is running...  Done.
--fopen:fh=1,md=r-
-I am block #015 - utility words - loaded rp2350 tnr.   -fopen:fh=1,md=r-
-I am block #017 - utility words - loaded rp2350 tnr.
-
-end of block 015.
-
-c4 - [38;5;40m2024.12.04[38;5;255m ok  a4de913
-dumpdb 
--fopen:fh=1,md=r-
 20004F5A: 04 62 6C 6F 63 6B 20 23 30 30 30 20 20 20 20 20    .block #000     
 20004F6A: 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20                    
 20004F7A: 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20                    
@@ -986,12 +920,3 @@ dumpdb
 2000735A: 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20                    
 2000736A: 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20                    
 2000737A: 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 00                   .
- ok  a4de913
-
-Terminating...
-Skipping tty reset...
-Thanks for using picocom
-[?2004h script $  exut[K[Kit
-[?2004lexit
-
-Script done on 2024-12-22 18:31:36+00:00 [COMMAND_EXIT_CODE="0"]
