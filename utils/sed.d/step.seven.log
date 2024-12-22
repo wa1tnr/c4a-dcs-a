@@ -1,0 +1,225 @@
+block #000
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ boot block
+  0 nbd 1 nbd 2 nbd 3 nbd 4 nbd 5 nbd 9 10 11 13 15 17 49 99
+ Sun 22 Dec 12:41:16 UTC 2024 barrywalter
+
+ 5 load 9 loadcomment
+ 15 load z" saw all of block 1 loads" ztype crwhite
+
+ rbforget 1 load ; edblock @ edit ;
+ ls z" ls -l" system ; lg z" lazygit" system
+
+ cr
+ ." c4 - " green .version white
+ 2 block !
+
+
+
+  - these are for executing from the editor -
+
+ ls
+ lg
+ 0 flush
+ blocks
+ z" ccc dev" system
+ z" git pull" system
+
+
+
+
+
+
+
+
+ block #003 - strings
+  z" hello strings" ztype
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+ block #004 - doc for string words
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ block #005 - screen
+ find cls loaded?
+ ->cr(r c--)." %e[%d;%dH" ; ->rc(c r--) swap ->cr ;
+ cls(--)." %e[2J" 1 1 ->rc ;
+ fg(fg--)." %e[38;5;%dm" ;
+ white255 fg ;green40 fg ;
+
+
+
+
+
+
+
+
+
+
+ block #009 - local words 14 December 2024 RP2350
+ cr z" I am block #009 loaded rp2350 tnr." ztype
+ datusz" Sat 21 Dec 17:35:54 UTC 2024 - RP2350 LittleFS"
+ hex
+ lblock( n -- )400 * 1034E000 + ;decimalled is 25 so
+ ndatusz" Sun 15 Dec 11:21:25 UTC 2024 - RP2350 LittleFS"
+  ztype ; iterashunz5 ;spacesfor space next ;
+ LED25 ; tnraz" this is tnra." ztype 8 spaces 43 emit ;
+ sec1000 dup * * for next ; ledOUTLED pin-output ;
+ ledON1 LED dpin! ; ledOFF0 LED dpin! ; ontime2 sec ;
+ offtime3 sec ; blinkledON ontime ledOFF offtime ;
+ blinksfor blink next ;cr cr
+ cblinksledOUT iterashunz blinks ;counted blinks
+ z" cblinks is running.." ztype cblinks z" . Done."
+ ztype offtime cr
+
+ block #010 - doc for block #009
+
+ Note: the update word in some forths is used to set a fl
+ag that is checked by a flush word, to see if the buf
+fer has changed (and therefore needs to be flushed to
+ mass storage to be retained).
+
+ According to a post read today (13 Dec 2024).
+
+
+
+
+
+
+
+
+ block #011
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ block #013 - comment on editor loading bug from #003
+
+ Looks like a valid test (sort-of) is to gojira! and th
+en load the problem block (the one that hangs the interpr
+eter).
+ The goal appears to be to remove either hidden control
+ chars (they render as whitespace, and 'change the color' (mo
+de) of the very next utterance to the right).
+
+ .. either that, or to add them where they cannot be as
+sumed to prevail (mode is not a guarantee).
+
+ What 'gojira! [boot] 3 edit' does - possibly - is it m
+akes the immediate environment testable (ex. a hidden yellow ct
+rl char ^C will have the yellow effect on a fresh load, where
+it was otherwise not apparent).
+ block #015 - was Block 6 - Utility words
+ z" I am block #015 - utility words - loaded rp2350 tn
+r. " cr ztype
+ .X( num width-- )>r <# r> 1- for # next #s #> ztype
+ ; .22 .X ; .33 .X ; .44 .X ;
+ .hexbase@ >t hex .2 t> base! ;
+ .binbase@ >t binary 8 .X t> base! ;
+ spaces for space next ;
+ a-emit( ch-- )dup 32 < over 126 > orif
+ drop '.'thenemit ;
+ a-dump( addr-- )$10 for dup c@ a-emit 1+ next drop
+; 17 load
+ cr z" end of block 015." ztype cr
+
+
+
+ block #017 - Utility words
+ find dump loaded?
+ z" I am block #017 - utility words - loaded rp2350 t
+nr." cr ztype cr
+ dump( addr n-- )swap >a 0 >t
+ for 0 t@ =ifa@ ." %n%x: "then
+ @a+ .hex space t@+ $0f =if
+ 3 spaces 0 t! a@ $10 - a-dumpthen
+ next atdrop ;hex
+ bdump( block#-- )block-addr 400 dump ;decimal9 b
+dump nnbcr block-addr 1024 dump cr ;
+ nbdblock-addr 1024 dump ;
+ bdxa0 nnb 1 nnb 2 nnb 3 nnb 4 nnb 5 nnb 9 nnb
+  10 nnb 11 nnb 13 nnb 15 nnb 17 nnb 49 nnb 99 nnb
+ ; dumpdbbdxa ;comment
+
+ block #049
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ block #099 - Sat 21 Dec 13:27:59 UTC 2024
+ Sun 22 Dec 12:41:16 UTC 2024 barrywalter
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
