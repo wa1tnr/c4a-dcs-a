@@ -1,0 +1,43 @@
+Script started on 2024-12-22 16:13:03+00:00
+[TERM="xterm-256color" COLUMNS="86" LINES="18"]
+
+  step one: remove all common embedded control chars,
+            which is a standard way to filter the 'typescript'
+            output file of obvious binary intrusions.
+
+            :%s/[^M^G^H^L^[]//g
+
+LittleFS: begin ... done.
+LittleFS: initialized
+
+Bytes total: 1048576, used: 122880
+c4 - version 2024.12.04
+Hello. ok  a4de913
+1 load -fopen:fh=1,md=r--fopen:fh=1,md=r--fopen:fh=1,md=r-
+I am block #009 loaded rp2350 tnr.
+
+cblinks is running...  Done.
+-fopen:fh=1,md=r-
+I am block #015 - utility words - loaded rp2350 tnr.   -fopen:fh=1,md=r-
+I am block #017 - utility words - loaded rp2350 tnr.
+
+end of block 015.
+
+dumpdb 
+20004F5A: 04 62 6C 6F 63 6B 20 23 30 30 30 20 20 20 20 20    .block #000     
+20004F6A: 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20                    
+20004F7A: 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20                    
+20004F8A: 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20                    
+
+database truncated - shown in next file in full.
+
+2000735A: 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20                    
+2000736A: 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20                    
+2000737A: 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 00                   .
+ ok  a4de913
+
+Terminating...
+Skipping tty reset...
+Thanks for using picocom
+
+Script done on 2024-12-22 16:15:13+00:00 [COMMAND_EXIT_CODE="0"]
