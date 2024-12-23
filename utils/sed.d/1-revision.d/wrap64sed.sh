@@ -9,28 +9,6 @@ sed -E -f iwrap64.sed ${1} | \
     sed 's/^ $//' | \
     sed 's/ $//'
 
-
-exit 0
-
-    sed -E -f pwrap64.sed | \
-    sed -E -f jwrap64.sed
-
-
-
-
-exit 0
-
-sed -E -f iwrap64.sed ${1} | \
-    cat -s | \
-    cat -s
-
-exit 0
-
-sed -E -f pwrap64.sed ${1} | \
-    sed -e 's/\x00//g'     | \
-    tr -s ' '              | \
-    sed -e 's/ $//g'
-
 exit 0
 
 cat << _EOF__
