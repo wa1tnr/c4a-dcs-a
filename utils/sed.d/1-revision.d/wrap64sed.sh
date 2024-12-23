@@ -1,13 +1,32 @@
 #!/bin/sh
 
-sed -E -f iwrap64.sed ${1} | \
-    xxd -r -p | \
-    fold -b1024 | \
-    fold -b64 | \
-    tr -d '\000$' | \
-    tr -s '  / /' | \
-    sed 's/^ $//' | \
-    sed 's/ $//'
+export FPARM=$1
+
+plusFn() {
+    # echo -n "first parm is: "
+    # echo $FPARM
+    sed -E -f iwrap64.sed $FPARM | \
+        xxd -r -p       | \
+        fold -b1024     | \
+        fold -b64       | \
+        sed 's/\x00$//' | \
+        tr -s '  / /'   | \
+        sed 's/^ $//'   | \
+        sed 's/ $//'
+}
+
+origFn() {
+    sed -E -f iwrap64.sed ${1} | \
+        xxd -r -p | \
+        fold -b1024 | \
+        fold -b64 | \
+        tr -d '\000$' | \
+        tr -s '  / /' | \
+        sed 's/^ $//' | \
+        sed 's/ $//'
+}
+
+plusFn
 
 exit 0
 
