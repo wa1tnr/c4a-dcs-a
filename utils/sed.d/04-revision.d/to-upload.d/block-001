@@ -1,0 +1,11 @@
+block #001 - boot block
+Wed 25 Dec 16:15:51 UTC 2024 jaune bristol       storr
+coldgojira! ;htab4 for space next ;
+cr z" boot block loading.. " ztype
+cr z" 5_ld: " ztype 5 load
+cr z" 9_ld: " ztype 9 load
+cr z" 15_ld: " ztype 15 loadprn hr AFT blk 17
+rbforget 1 load ; edblock @ edit ;
+cr ." c4 - " green .version white
+space cr z" boot block ends." ztype cr
+2 block !
