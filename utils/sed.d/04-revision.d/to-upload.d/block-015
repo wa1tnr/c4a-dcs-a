@@ -1,0 +1,12 @@
+block #015 - was Block 6 - Utility words
+cr z" I am block #015 - utility words - loaded rp2350 tnr."
+ ztypenothing worth printing here
+.X( num width-- )>r <# r> 1- for # next #s #> ztype ;
+.22 .X ; .33 .X ; .44 .X ;
+.hexbase@ >t hex .2 t> base! ;
+.binbase@ >t binary 8 .X t> base! ;
+a-emit( ch-- )dup 32 < over 126 > orif
+drop '.'thenemit ;
+a-dump( addr-- )$10 for dup c@ a-emit 1+ next drop ;
+after cblinks done add spacing:
+htab 17 load htab

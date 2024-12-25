@@ -1,0 +1,7 @@
+block #022
+
+ decimal as a yellow word persistently changes the base radix.
+
+ no other mechanism that works in the 'load' context seems
+ easily deduced or available, though that is far from certain.
+

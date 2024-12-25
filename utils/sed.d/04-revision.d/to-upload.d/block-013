@@ -1,0 +1,14 @@
+block #013 - comment on editor loading bug from #003
+
+ Looks like a valid test (sort-of) is to gojira! and then
+ load the problem block (the one that hangs the interpreter).
+
+ The goal appears to be to remove either hidden control chars
+ (they render as whitespace, and 'change the color' (mode)
+ of the very next utterance to the right). PARAGRAPH
+ .. either that, or to add them where they cannot be assumed
+ to prevail (mode is not a guarantee). PARAGRAPH
+ What 'gojira! [boot] 3 edit' does - possibly - is it makes the
+ immediate environment testable (ex. a hidden yellow ctrl char
+ ^C will have the yellow effect on a fresh load, where it was
+ otherwise not apparent).

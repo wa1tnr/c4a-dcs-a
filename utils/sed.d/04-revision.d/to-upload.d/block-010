@@ -1,0 +1,9 @@
+block #010 - doc for block #009
+
+ Note: the update word in some forths is used to set a flag
+ that is checked by a flush word, to see if the buffer
+ has changed (and therefore needs to be flushed to
+ mass storage to be retained).
+
+ According to a post read today (13 Dec 2024).
+

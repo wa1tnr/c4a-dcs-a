@@ -1,0 +1,8 @@
+block #005 - screen
+cr z" I am block #005 loading.." ztype
+find cls loaded?
+->cr(r c--)." %e[%d;%dH" ;
+->rc(c r--) swap ->cr ;
+cls(--)." %e[2J" 1 1 ->rc ;
+fg(fg--)." %e[38;5;%dm" ;
+white255 fg ;green40 fg ;

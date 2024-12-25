@@ -1,0 +1,13 @@
+block #017 - Utility words
+find dump loaded?
+ cr z" I am block #017 - utility words - loaded rp2350 tnr."
+ ztype htabdump( addr n-- )swap >a 0 >t
+for 0 t@ =ifa@ ." %n%x: "then
+@a+ .hex space t@+ $0f =if
+3 spaces 0 t! a@ $10 - a-dumpthen
+next atdrop ;19 load
+bdump( block#-- )block-addr 1024 dump ;
+nnbcr block-addr 1024 dump cr ;nbdblock-addr 1024 dump ;
+bdxa0 nnb 1 nnb 2 nnb 3 nnb 4 nnb 5 nnb 9 nnb 10 nnb 11 nnb
+ 13 nnb 15 nnb 17 nnb 19 nnb 21 nnb 22 nnb 49 nnb 99 nnb ;
+dumpdbbdxa ;coldgojira! ;

@@ -1,0 +1,6 @@
+block #019
+$10018E80 - err msg qengl
+ $10019E00 - higher side forth dict or <foo>
+
+nd( addr -- addr+p )dup $1000 dump $1000 + ;
+

@@ -1,0 +1,3 @@
+block #021
+runallbase@ >t decimal 1 load t> base! ;
+

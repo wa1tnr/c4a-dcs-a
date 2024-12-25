@@ -1,0 +1,14 @@
+block #009 - local words 24 December 2024 RP2350
+cr z" I am block #009 loaded rp2350 tnr." ztype
+lblock( n -- )$400 * $10301000 + ;
+datusz" Mon 23 Dec 23:12:04 UTC 2024 - RP2350 LittleFS"
+ztype ;iterashunz5 ;spacesfor space next ;x
+LED25 ; tnraz" this is tnra." ztype 8 spaces 43 emit ;
+sec1000 dup * * for next ; ledOUTLED pin-output ;
+ledON1 LED dpin! ; ledOFF0 LED dpin! ; ontime2 sec ;
+prpipspace 46 emit space ;
+offtime3 sec ; blinkprpip ledON ontime ledOFF offtime ;
+blinksfor blink next ;
+cblinksledOUT iterashunz blinks ;
+cr z" cblinks is running on blk9.." ztype
+ cblinks z" . Done." ztype offtime
