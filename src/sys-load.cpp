@@ -121,6 +121,7 @@ void sys_load() {
 */
 
     outer("cell var vh");
+    outer(": go 4 for space next 1 load ;");
     outer(": marker here 20 wc! last 21 wc! vhere vh ! ;");
     outer(": forget 20 wc@ (here) wc! 21 wc@ (last) wc! vh @ (vhere) ! ;");
 /*

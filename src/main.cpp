@@ -1,7 +1,7 @@
 // Support for development boards
 
 #include "c4a.h"
-#define MAIN_TIMESTAMP "Fri 20 Dec 12:19:14 UTC 2024"
+#define MAIN_TIMESTAMP "Wed 25 Dec 14:24:51 UTC 2024"
 
 #define mySerial Serial // Teensy and Pico
 
@@ -18,9 +18,8 @@
         mySerial.write(' ');
         mySerial.println("  tannis feldspar delta    __");
         mySerial.println(MAIN_TIMESTAMP);
-        mySerial.println("  glowworm mealworm        __");
-        mySerial.println("  difta  clage  agtbeta    __");
-        mySerial.println("  gojira! gojiraflash      __");
+        mySerial.println("  fotor  bruvak  tenfute   __");
+        mySerial.println("  ptanq  steya  balduna    __");
     }
     void emit(char c) { mySerial.print(c); }
     void zType(const char *s) { mySerial.print(s); }
